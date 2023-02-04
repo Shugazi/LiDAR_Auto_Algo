@@ -8,7 +8,7 @@ lidar = rplidar.RPLidar('/dev/ttyUSB0')
 lidar.start_motor()
 
 # Set the threshold distance for a hazard
-threshold_distance = 1000  # in mm
+threshold_distance = 500  # in mm
 
 # Get the scan data
 for scan in lidar.iter_scans():
@@ -16,6 +16,7 @@ for scan in lidar.iter_scans():
         if distance <= threshold_distance:
             # Convert the angle to degrees
             angle = angle / 64.0
+            print(angle)
 
             # Determine the direction of the hazard
             if angle >= 0 and angle < 45:

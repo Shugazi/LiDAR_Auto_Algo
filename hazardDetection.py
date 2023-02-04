@@ -35,11 +35,11 @@ for scan in lidar.iter_scans():
                 print("Hazard detected to the back")
             elif 270 <= angle < 315:
                 print("Hazard detected to the right back")
-            elif 315 <= angle < 360:
+            else:
                 print("Hazard detected to the right")
 
-            else:
-                print("Moving Forward!\n")
+        else:
+            print("Moving Forward!\n")
 
 # Stop the scan and disconnect from the lidar
 lidar.stop()

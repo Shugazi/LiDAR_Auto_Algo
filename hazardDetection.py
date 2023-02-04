@@ -12,6 +12,7 @@ threshold_distance = 200  # in mm
 
 # Get the scan data
 num = 0
+hazard = False
 for scan in lidar.iter_scans(max_buf_meas=100):
     num += 1
     for deez, angle, distance in scan:
@@ -49,7 +50,8 @@ for scan in lidar.iter_scans(max_buf_meas=100):
                 print("Hazard detected to the right")"""
 
     else:
-        print(f"Going Forward! {num} \n")
+        if not hazard:
+            print(f"Going Forward! {num} \n")
 
 # Stop the scan and disconnect from the lidar
 lidar.stop()

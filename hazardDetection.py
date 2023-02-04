@@ -12,7 +12,8 @@ threshold_distance = 500  # in mm
 
 # Get the scan data
 for scan in lidar.iter_scans():
-    for angle, distance in scan:
+    for deez, angle, distance in scan:
+        print(f"Here is the scan {scan} \n")
         if distance <= threshold_distance:
             # Convert the angle to degrees
             angle = angle / 64.0

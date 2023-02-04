@@ -35,7 +35,7 @@ for scan in lidar.iter_scans():
                 print("Hazard detected to the back")
             elif 270 <= angle < 315:
                 print("Hazard detected to the right back")
-            else:
+            elif 315 <= angle < 360:
                 print("Hazard detected to the right")
 
         else:

@@ -34,9 +34,6 @@ for scan in lidar.iter_scans(max_buf_meas=100):
                 print("Hazard detected to the left front")
                 print("Moving to the Right\n")
                 hazard = True
-            else:
-                print("No Hazard:\n")
-                hazard = False
 
             """elif 135 <= angle < 180:
                 print("Hazard detected to the left")
@@ -48,6 +45,9 @@ for scan in lidar.iter_scans(max_buf_meas=100):
                 print("Hazard detected to the right back")
             elif 315 <= angle < 360:
                 print("Hazard detected to the right")"""
+        else:
+            print("No Hazard:\n")
+            hazard = False
 
     else:
         if not hazard:

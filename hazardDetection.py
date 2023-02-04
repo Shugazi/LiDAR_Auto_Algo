@@ -12,7 +12,7 @@ threshold_distance = 200  # in mm
 
 # Get the scan data
 for scan in lidar.iter_scans(max_buf_meas=100):
-    for deez, angle, distance in scan:
+    for i,deez, angle, distance in enumerate(scan):
         if distance <= threshold_distance:
             print(angle)
             # Determine the direction of the hazard
@@ -38,7 +38,7 @@ for scan in lidar.iter_scans(max_buf_meas=100):
             elif 315 <= angle < 360:
                 print("Hazard detected to the right")"""
 
-        else: print("Going Forward! \n")
+        else: print(f"Going Forward! {i} \n")
 
 
 # Stop the scan and disconnect from the lidar

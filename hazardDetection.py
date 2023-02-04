@@ -14,27 +14,32 @@ threshold_distance = 200  # in mm
 for scan in lidar.iter_scans():
     for deez, angle, distance in scan:
         if distance <= threshold_distance:
-            # Convert the angle to degrees
-            #angle = angle / 64.0
             print(angle)
-
             # Determine the direction of the hazard
-            if angle >= 0 and angle < 45:
+            if 0 <= angle < 45:
                 print("Hazard detected to the right front")
-            elif angle >= 45 and angle < 90:
+                print("Moving to the Left \n")
+            elif 45 <= angle < 90:
                 print("Hazard detected to the front")
-            elif angle >= 90 and angle < 135:
+                print("Moving to the Right\n")
+
+            elif 90 <= angle < 135:
                 print("Hazard detected to the left front")
-            elif angle >= 135 and angle < 180:
+                print("Moving to the Right\n")
+
+            elif 135 <= angle < 180:
                 print("Hazard detected to the left")
-            elif angle >= 180 and angle < 225:
+            elif 180 <= angle < 225:
                 print("Hazard detected to the left back")
-            elif angle >= 225 and angle < 270:
+            elif 225 <= angle < 270:
                 print("Hazard detected to the back")
-            elif angle >= 270 and angle < 315:
+            elif 270 <= angle < 315:
                 print("Hazard detected to the right back")
-            else:
+            elif 315 <= angle < 360:
                 print("Hazard detected to the right")
+
+            else:
+                print("Moving Forward!\n")
 
 # Stop the scan and disconnect from the lidar
 lidar.stop()

@@ -96,21 +96,25 @@ try:
                 hazard_detected = True
                 print(angle)
 
-                if 0 <= angle < 45:
+                if 22 <= angle < 60:
                     print("Hazard detected to the right front")
                     print("Moving to the Left \n")
+                    left()
 
-                elif 45 <= angle < 90:
+                elif 325 <= angle or angle < 22:
                     print("Hazard detected to the front")
                     print("Moving to the Right\n")
+                    right()
 
-                elif 90 <= angle < 135:
+                elif 315 <= angle < 337:
                     print("Hazard detected to the left front")
                     print("Moving to the Right\n")
+                    right()
 
         # drive forward if no hazards are detected
         if not hazard_detected:
             print(f"Driving Forward {num}")
+            forward()
 except KeyboardInterrupt:
     pass
 

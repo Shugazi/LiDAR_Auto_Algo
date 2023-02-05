@@ -20,7 +20,7 @@ try:
                     print("Hazard detected to the right front")
                     print("Moving to the Left \n")
 
-                elif 337 <= angle < 22:
+                elif 337 <= angle or angle < 22:
                     print("Hazard detected to the front")
                     print("Moving to the Right\n")
 

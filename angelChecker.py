@@ -8,12 +8,15 @@ lidar.start_motor()
 print("starting")
 
 num = 0
+threshold_distance = 200
 try:
     for scan in lidar.iter_scans():
         num += 1
         hazard_detected = False
         for intensity, angle, distance in scan:
-            print(angle)
+            if distance <= threshold_distance:
+                print(angle)
+
 except KeyboardInterrupt:
     pass
 

@@ -32,8 +32,7 @@ try:
                     print("Hazard detected to the left front")
                     print("Moving to the Right\n")
 
-                # convert angle to servo duty cycle
-                print("Avoding obstacle\n")
+
         # drive forward if no hazards are detected
         if not hazard_detected:
             print(f"Driving Forward {num}")

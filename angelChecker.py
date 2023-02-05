@@ -16,6 +16,17 @@ try:
         for intensity, angle, distance in scan:
             if distance <= threshold_distance:
                 print(angle)
+                if 22 <= angle < 45:
+                    print("Hazard detected to the right front")
+                    print("Moving to the Left \n")
+
+                elif 337 <= angle < 22:
+                    print("Hazard detected to the front")
+                    print("Moving to the Right\n")
+
+                elif 315 <= angle < 337:
+                    print("Hazard detected to the left front")
+                    print("Moving to the Right\n")
 
 except KeyboardInterrupt:
     pass

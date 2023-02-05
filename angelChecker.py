@@ -8,7 +8,7 @@ lidar.start_motor()
 print("starting")
 
 num = 0
-threshold_distance = 200
+threshold_distance = 300
 try:
     for scan in lidar.iter_scans():
         num += 1

@@ -18,10 +18,9 @@ def run(path):
         for measurment in lidar.iter_measurments():
             # We need a data structure so we will use dictionary
             data = {
-                'angle': measurment[1],
-                'distance': measurment[2],
-                'quality': measurment[3],
-                'timestamp': measurment[0],
+                'intensity': measurment[1],
+                'angle': measurment[2],
+                'distance': measurment[3],
             }
             # Write the dictionary as a JSON string to the file
             outfile.write(json.dumps(data) + '\n')
